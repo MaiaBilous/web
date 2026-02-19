@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №12-13: Основи CSS</title>
+    
+    <style>
+        h2 {
+            color: green;
+        }
+    </style>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Лабораторна робота №12-13: Основи CSS</h1>
+    
+    <section style="margin: 30px 0; padding: 20px; border: 2px solid #333; border-radius: 10px;">
+        <h2 style="border-left: 5px solid blue; padding-left: 10px;">Завдання 1: Три способи стилізації</h2>
+        
+        <h1 style="color: red;">Головний заголовок</h1>
+        
+        <h2>Підзаголовок</h2>
+        
+        <p>Перший абзац тексту.</p>
+        <p>Другий абзац тексту.</p>
+    </section>
+    
+    <section style="margin: 30px 0; padding: 20px; border: 2px solid #333; border-radius: 10px;">
+        <h2 style="border-left: 5px solid green; padding-left: 10px;">Завдання 2: Сила селекторів</h2>
+        
+        <div id="header">
+            <h1>Мій блог</h1>
+            <p>Ласкаво просимо!</p>
+        </div>
+
+        <h2>Остання стаття</h2>
+        <p class="highlight">Це дуже важливий абзац, який потрібно виділити.</p>
+        <p>Це звичайний абзац, який описує статтю.</p>
+        <p class="highlight">Ще один важливий абзац.</p>
+
+        <div id="footer">
+            <p>Контактна інформація</p>
+        </div>
+    </section>
+    
+    <section style="margin: 30px 0; padding: 20px; border: 2px solid #333; border-radius: 10px;">
+        <h2 style="border-left: 5px solid red; padding-left: 10px;">Завдання 3: Блоки та Рядки</h2>
+        
+        <div style="background-color: #f0f0f0; padding: 15px; border-radius: 5px;">
+            <p style="background-color: lightblue; padding: 10px;">
+                Це абзац (блочний елемент), а всередині нього є 
+                <span style="background-color: lightcoral; padding: 5px;">ось цей текст (рядковий елемент)</span>. 
+                Як бачите, він не починається з нового рядка.
+            </p>
+            
+            <div style="background-color: lightgreen; padding: 10px; margin: 10px 0;">
+                Це DIV (блочний елемент).
+            </div>
+            
+            <a href="#" style="background-color: yellow; padding: 5px; display: inline-block; margin-right: 5px;">Це посилання (рядковий елемент).</a>
+            <a href="#" style="background-color: orange; padding: 5px; display: inline-block;">А це друге посилання (теж рядковий).</a>
+            
+    
+            
+            <div style="margin-top: 20px;">
+                <p><strong>Експеримент з width:</strong></p>
+                <div style="background-color: #ffe0e0; padding: 10px;">
+                    <p style="background-color: #ffb6c1; width: 500px; margin-bottom: 10px;">
+                        P з width: 500px - спрацювало (блочний елемент)
+                    </p>
+                    <span style="background-color: #ffd700; width: 500px; display: block; margin-top: 10px;">
+                        Span з width: 500px і display:block - тепер працює
+                    </span>
+                    <p style="margin-top: 10px;">
+                        Звичайний span без display:block не сприймає width
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section style="margin: 30px 0; padding: 20px; background-color: #f5f5f5; border-radius: 10px;">
+            
+            <div style="background-color: white; padding: 15px; border-radius: 5px; grid-column: span 2;">
+                <h3 style="color: #f39c12;">Блочні vs Рядкові елементи:</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background-color: #3498db; color: white;">
+                        <th style="padding: 10px; border: 1px solid #ddd;">Характеристика</th>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Блочні (block)</th>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Рядкові (inline)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Початок рядка</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">З нового рядка</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">В тому ж рядку</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Ширина</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Вся доступна</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">По вмісту</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Можливість width/height</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Так</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Ні (без display:block/inline-block)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Приклади</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">div, p, h1-h6</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">span, a, strong</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
