@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практичні завдання: Float та Position</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e74c3c;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .task-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .task-number {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .article-container {
+            border: 3px solid #e74c3c;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 25px;
+            background-color: #fff;
+            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.2);
+        }
+        
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        .article-container h1 {
+            color: #2c3e50;
+            text-align: left;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .float-img {
+            float: left;
+            margin-right: 25px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            border: 2px solid #3498db;
+        }
+        
+        .article-container p {
+            text-align: justify;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .products-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .product-card {
+            position: relative;
+            width: 280px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            background: linear-gradient(145deg, #ffffff, #f5f5f5);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+        
+        .product-card h3 {
+            margin: 10px 0 5px;
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .product-card p {
+            margin: 8px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #27ae60;
+            margin-top: 10px;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.4);
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        .sticky-menu {
+            position: sticky;
+            top: 10px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 15px 0;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 100;
+            margin-bottom: 30px;
+            border: 2px solid #e74c3c;
+        }
+        
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e74c3c;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background-color: #e74c3c;
+            transform: translateY(-2px);
+        }
+        
+        .long-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .content-section {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .content-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .content-section p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s;
+            z-index: 1000;
+            border: 2px solid white;
+        }
+        
+        .back-to-top:hover {
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
+        }
+        
+        .task-footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            border: 2px solid #e74c3c;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .product-card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Кросбраузерне верстання та Позиціонування елементів на Float та Position у CSS</h1>
+    
+    <section class="task-section">
+        <span class="task-number">Завдання 1</span>
+        <h2>Стаття з обтіканням зображення</h2>
+        
+        <div class="article-container clearfix">
+            <h1>Цікава стаття про CSS</h1>
+            <p>CSS (Cascading Style Sheets) — це спеціальна мова стилів, яка визначає візуальне оформлення веб-сторінок. За допомогою CSS ми можемо керувати кольорами, шрифтами, розташуванням елементів та багатьма іншими властивостями. У цій статті ми розглянемо, як працює властивість float та як вона впливає на потік документа.</p>
+            
+            <p>Властивість float була створена спеціально для обтікання зображень текстом, як ви можете бачити на цьому прикладі. Зображення ліворуч, а текст акуратно його обтікає. Це класичний приклад використання float за прямим призначенням. Зверніть увагу, що завдяки clearfix червона рамка контейнера охоплює і текст, і зображення.</p>
+            
+            <p>Без clearfix контейнер "схлопнувся" б і не побачив висоти плаваючого зображення. Техніка clearfix додає псевдоелемент ::after з властивістю clear: both, який "розпирає" контейнер і змушує його враховувати всі float-елементи всередині. Це особливо важливо, коли всередині контейнера є лише плаваючі елементи.</p>
+        </div>
+    </section>
+    
+    <section class="task-section">
+        <span class="task-number">Завдання 2</span>
+        <h2>Карточки товарів з ярликами</h2>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>iPhone 15 Pro</h3>
+                <p>6.1" дисплей, процесор A17 Pro, потрійна камера 48 Мп, титановий корпус</p>
+                <div>
+                    <span class="price">45 999 грн</span>
+                    <span class="old-price">52 999 грн</span>
+                </div>
+                <div class="badge">Знижка -15%</div>
+            </div>
+            
+            <div class="product-card">
+                <h3>Samsung Galaxy S24</h3>
+                <p>6.2" Dynamic AMOLED, Exynos 2400, 8K відео, AI-функції, 5000 mAh</p>
+                <div>
+                    <span class="price">38 999 грн</span>
+                    <span class="old-price">44 999 грн</span>
+                </div>
+                <div class="badge">Хіт продажів</div>
+            </div>
+            
+            <div class="product-card">
+                <h3>Google Pixel 8 Pro</h3>
+                <p>Чистий Android, унікальна камера з магічним ластиком, 7 років оновлень</p>
+                <div>
+                    <span class="price">34 999 грн</span>
+                </div>
+                <div class="badge">Новинка!</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="task-section">
+        <span class="task-number">Завдання 3</span>
+        <h2>Прилипаюче меню та кнопка "Нагору"</h2>
+        
+        <div class="sticky-menu">
+            <div class="menu-container">
+                <div class="logo">CSS Position</div>
+                <nav class="nav-links">
+                    <a href="#home">Головна</a>
+                    <a href="#about">Про нас</a>
+                    <a href="#services">Послуги</a>
+                    <a href="#portfolio">Портфоліо</a>
+                    <a href="#contact">Контакти</a>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="long-content">
+            <div id="home" class="content-section">
+                <h3>Головна сторінка</h3>
+                <p>Ласкаво просимо на наш демонстраційний сайт! Тут ви можете побачити, як працює прилипаюче меню з position: sticky. Зверніть увагу, що коли ви прокручуєте сторінку вниз, меню завжди залишається зверху екрана. Це досягається завдяки властивості position: sticky та top: 0.</p>
+                <p>Крім того, у правому нижньому куті завжди висить кнопка "Нагору" з position: fixed. Вона не зникає при прокручуванні і завжди готова повернути вас на початок сторінки. Це дуже зручно для довгих сторінок з великою кількістю контенту.</p>
+            </div>
+            
+            <div id="about" class="content-section">
+                <h3>Про нас</h3>
+                <p>Ми — команда веб-розробників, які спеціалізуються на створенні сучасних, адаптивних та кросбраузерних сайтів. У своїй роботі ми використовуємо найкращі практики CSS: від класичного позиціонування до сучасних Flexbox та Grid.</p>
+                <p>Наші сайти однаково добре виглядають у всіх браузерах — від Google Chrome до Safari, від десктопів до мобільних пристроїв. Ми приділяємо велику увагу деталям та користувацькому досвіду.</p>
+            </div>
+            
+            <div id="services" class="content-section">
+                <h3>Наші послуги</h3>
+                <p>Розробка сайтів "під ключ" — від лендінгів до інтернет-магазинів. Верстка макетів з Figma, Adobe XD, Photoshop. Адаптивна та кросбраузерна верстка. Оптимізація швидкості завантаження. Підтримка та супровід готових проектів.</p>
+                <p>Всі наші проекти проходять ретельне тестування в різних браузерах та на різних пристроях. Ми гарантуємо, що ваш сайт буде виглядати ідеально скрізь!</p>
+            </div>
+            
+            <div id="portfolio" class="content-section">
+                <h3>Наше портфоліо</h3>
+                <p>За 5 років роботи ми створили понад 100 успішних проектів. Серед наших клієнтів — малий бізнес, стартапи, освітні проекти та благодійні фонди. Кожен проект для нас унікальний, і ми завжди шукаємо креативні рішення.</p>
+                <p>Приклад 1: Інтернет-магазин одягу з фільтрацією товарів. Приклад 2: Корпоративний сайт IT-компанії. Приклад 3: Освітня платформа з відеокурсами. Приклад 4: Сайт ресторану з онлайн-бронюванням.</p>
+            </div>
+            
+            <div id="contact" class="content-section">
+                <h3>Контакти</h3>
+                <p>Ми завжди відкриті до нових проектів та співпраці! Зв'яжіться з нами зручним для вас способом:</p>
+                <p>Телефон: +380 (50) 123-45-67<br>
+                Email: info@css-position.com<br>
+                Адреса: м. Київ, вул. Хрещатик, 1<br>
+                Графік роботи: Пн-Пт, 10:00 - 19:00</p>
+                <p>Також ви можете заповнити форму зворотного зв'язку на нашому сайті, і ми відповімо вам протягом 24 годин.</p>
+            </div>
+        </div>
+        
+        <a href="#" class="back-to-top">Нагору</a>
+    </section>
+</body>
+</html>
