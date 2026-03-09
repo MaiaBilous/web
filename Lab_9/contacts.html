@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Муркотливий дім - Контакти</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="img/logo.png" alt="Логотип Муркотливий дім" width="80">
+        </a>
+        
+        <h1>🐱 Муркотливий дім</h1>
+        <p>Все, що ви хотіли знати про <strong>котів</strong> та їхні звички</p>
+        
+        <nav>
+            <h2>Навігація</h2>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="breeds.html">Породи котів</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section id="contacts">
+            <h2>📞 Наші контакти</h2>
+            
+            <div>
+                <h3>Адреса</h3>
+                <p>м. Київ, вул. Котяча, 42</p>
+                
+                <h3>Телефон</h3>
+                <p><a href="tel:+380991234567">+38 (099) 123-45-67</a></p>
+                
+                <h3>Email</h3>
+                <p><a href="mailto:info@purrhouse.ua">info@purrhouse.ua</a></p>
+                
+                <h3>Графік роботи</h3>
+                <p>Пн-Пт: 09:00 - 20:00<br>
+                   Сб-Нд: 10:00 - 18:00</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="contact-form">
+            <h2>📝 Напишіть нам</h2>
+            <form action="#" method="POST">
+                
+                <div>
+                    <label for="username">Ваше ім'я:</label><br>
+                    <input type="text" id="username" name="username" placeholder="Введіть ім'я" required>
+                </div>
+                <br>
+
+                <div>
+                    <label for="useremail">Ваш Email:</label><br>
+                    <input type="email" id="useremail" name="useremail" placeholder="example@mail.com" required>
+                </div>
+                <br>
+
+                <div>
+                    <label for="userphone">Номер телефону:</label><br>
+                    <input type="tel" id="userphone" name="phone" placeholder="+38 (099) 123-45-67">
+                </div>
+                <br>
+
+                <div>
+                    <label for="userpass">Пароль (для реєстрації на сайті):</label><br>
+                    <input type="password" id="userpass" name="password" placeholder="Введіть пароль">
+                </div>
+                <br>
+
+                <div>
+                    <label for="message">Повідомлення:</label><br>
+                    <textarea id="message" name="message" rows="5" cols="30" placeholder="Ваше повідомлення..."></textarea>
+                </div>
+                <br>
+
+                <div>
+                    <label for="topic">Тема звернення:</label>
+                    <select id="topic" name="topic">
+                        <option value="question">Питання про котів</option>
+                        <option value="support">Технічна підтримка</option>
+                        <option value="cooperation">Співпраця</option>
+                        <option value="other">Інше</option>
+                    </select>
+                </div>
+                <br>
+
+                <div>
+                    <p>Як ви дізналися про нас:</p>
+                    <input type="radio" id="social" name="source" value="social">
+                    <label for="social">Соціальні мережі</label><br>
+                    
+                    <input type="radio" id="friends" name="source" value="friends">
+                    <label for="friends">Поради друзів</label><br>
+                    
+                    <input type="radio" id="internet" name="source" value="internet">
+                    <label for="internet">Пошук в інтернеті</label><br>
+                    
+                    <input type="radio" id="othersource" name="source" value="other">
+                    <label for="othersource">Інше</label>
+                </div>
+                <br>
+
+                <div>
+                    <p>Яка порода вас цікавить:</p>
+                    <input type="checkbox" id="breed1" name="breed_interest" value="british">
+                    <label for="breed1">Британська</label><br>
+                    
+                    <input type="checkbox" id="breed2" name="breed_interest" value="scottish">
+                    <label for="breed2">Шотландська</label><br>
+                    
+                    <input type="checkbox" id="breed3" name="breed_interest" value="maine_coon">
+                    <label for="breed3">Мейн-кун</label><br>
+                    
+                    <input type="checkbox" id="breed4" name="breed_interest" value="sphynx">
+                    <label for="breed4">Сфінкс</label><br>
+                    
+                    <input type="checkbox" id="breed5" name="breed_interest" value="other_breed">
+                    <label for="breed5">Інша</label>
+                </div>
+                <br>
+
+                <div>
+                    <label for="age">Вік вашого кота (якщо є):</label>
+                    <select id="age" name="cat_age">
+                        <option value="no_cat">Немає кота</option>
+                        <option value="kitten">0-6 місяців</option>
+                        <option value="young">6-12 місяців</option>
+                        <option value="adult">1-7 років</option>
+                        <option value="senior">7+ років</option>
+                    </select>
+                </div>
+                <br>
+
+                <div>
+                    <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                    <label for="subscribe">Підписатися на новини про котів</label>
+                </div>
+                <br>
+
+                <div>
+                    <input type="checkbox" id="agree" name="agree" required>
+                    <label for="agree">Я даю згоду на обробку персональних даних</label>
+                </div>
+                <br>
+
+                <div>
+                    <button type="submit">Надіслати повідомлення</button>
+                    <button type="reset">Очистити форму</button>
+                </div>
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="map">
+            <h2>🗺 Де ми знаходимось</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.0!2d30.0!3d50.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDAwJzAwLjAiTiAzMMKwMDAnMDAuMCJF!5e0!3m2!1suk!2sua!4v1620000000000!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+        <hr>
+
+        <section id="social-contacts">
+            <h3>Ми в соціальних мережах</h3>
+            <ul>
+                <li>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" title="Наш Instagram">
+                        📸 Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook.com" target="_blank" rel="noopener" title="Наш Facebook">
+                        👍 Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://t.me" target="_blank" rel="noopener" title="Наш Telegram">
+                        ✈️ Telegram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener" title="Наш TikTok">
+                        🎵 TikTok
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <p>
+            <a href="#">⬆️ Вгору</a>
+        </p>
+        <hr>
+        <p>© 2025 Муркотливий дім. Усі права захищені.</p>
+        <p>Сайт створено з любов'ю до котів 🐾</p>
+    </footer>
+</body>
+</html>
