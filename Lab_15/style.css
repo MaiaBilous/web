@@ -698,7 +698,6 @@ caption {
     }
 }
 
-/* Анімація контенту в слайдері */
 .swiper-slide h2, 
 .swiper-slide p,
 .swiper-slide .hero-button {
@@ -725,7 +724,6 @@ caption {
     transition-delay: 0.8s;
 }
 
-/* Гамбургер-меню */
 .hamburger {
     display: none;
     border: none;
@@ -796,7 +794,6 @@ caption {
     color: #e67e22;
 }
 
-/* Адаптивність для гамбургер-меню */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
